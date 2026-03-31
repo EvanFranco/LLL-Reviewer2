@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
         
       - name: Install dependencies
-        run: pup install requests groq
+        run: pip install requests groq
 
       - name: Run AI review
         env:
