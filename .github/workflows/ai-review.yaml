@@ -1,5 +1,5 @@
 on:
-  pull_requsts:
+  pull-requests:
     types: [opened,synchronize]
   
 jobs:
