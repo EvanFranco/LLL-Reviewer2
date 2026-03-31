@@ -6,7 +6,7 @@ jobs:
   review:
     runs-on: ubuntu-latest
     permissions:
-      pull-request: write
+      pull-requests: write
       contents: read
     
     steps:
@@ -29,5 +29,4 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           REPO: ${{ github.repository }}
         run: python .github/scripts/review.python
-      
       
