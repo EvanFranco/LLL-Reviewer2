@@ -1,5 +1,5 @@
 on:
-  pull_requsts:
+  pull_request:
     types: [opened,synchronize]
   
 jobs:
@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
         
       - name: Install dependencies
-        run: pup install requests groq
+        run: pip install requests groq
 
       - name: Run AI review
         env:
@@ -28,5 +28,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           REPO: ${{ github.repository }}
-        run: python .github/scripts/review.python
+        run: python .github/scripts/review.py
       
